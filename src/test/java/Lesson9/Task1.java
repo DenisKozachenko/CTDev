@@ -1,5 +1,6 @@
 package Lesson9;
 
+import Lesson9_2.ExecuteSearch;
 import additional.CompleteForm;
 import additional.CreateAccount;
 import additional.UserCredentials;
@@ -26,10 +27,12 @@ public class Task1 {
 
     public static CreateAccount createAccount ;
     public static CompleteForm completeForm;
+    public static ExecuteSearch executeSearch;
 
 
 
-    @BeforeEach
+
+    @BeforeAll
     static void startDriver()  {
 
         System.out.println("Before all !");
@@ -41,7 +44,7 @@ public class Task1 {
         options.addArguments("start-maximized");
 
         driver = new ChromeDriver(options);
-//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 //        driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
         driver.navigate().to(Settings.DOMAIN);
         driver.manage().deleteAllCookies();
@@ -66,16 +69,16 @@ public class Task1 {
         public void test2(){
             completeForm = new CompleteForm(driver);
 
-//            completeForm.firstName.sendKeys("Denys");
-//            completeForm.lastName.sendKeys("Kozachenko");
-//            completeForm.email.sendKeys("dkozachenko@ukr.net");
-//            completeForm.passwd.sendKeys("qwerty");
-//            completeForm.firstNameAd.sendKeys("Denys");
-//            completeForm.lastNameAd.sendKeys("Kozach");
-//            completeForm.address1.sendKeys("Test");
-//            completeForm.city.sendKeys("Test2");
-//            completeForm.alias.sendKeys("Test3");
-//            completeForm.submitBtn.click();
+            completeForm.firstName.sendKeys("Denys");
+            completeForm.lastName.sendKeys("Kozachenko");
+            completeForm.email.sendKeys("dkozachenko@ukr.net");
+            completeForm.passwd.sendKeys("qwerty");
+            completeForm.firstNameAd.sendKeys("Denys");
+            completeForm.lastNameAd.sendKeys("Kozach");
+            completeForm.address1.sendKeys("Test");
+            completeForm.city.sendKeys("Test2");
+            completeForm.alias.sendKeys("Test3");
+            completeForm.submitBtn.click();
             completeForm.findElements();
             completeForm.errorMessage();
 
@@ -89,8 +92,14 @@ public class Task1 {
         @Test
         public void test1(){
 
-            
+            executeSearch = new ExecuteSearch(driver);
+
+            executeSearch.provideSearch();
+
+
         }
+
+
 
     }
 }
