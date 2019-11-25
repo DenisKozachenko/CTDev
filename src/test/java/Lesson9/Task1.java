@@ -3,9 +3,7 @@ package Lesson9;
 import Lesson9_2.ExecuteSearch;
 import additional.CompleteForm;
 import additional.CreateAccount;
-import additional.UserCredentials;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +11,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import parameters.Settings;
 
-
-import javax.xml.bind.SchemaOutputResolver;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
